@@ -20,11 +20,8 @@
     --cream: #fffaf8;
     --stamp: #f0d9c8;
   }
-
   *{ box-sizing: border-box; }
-
   html{ scroll-behavior: smooth; }
-
   body{
     margin:0;
     background: var(--pink-bg);
@@ -37,16 +34,12 @@
     overflow-x: hidden;
     position: relative;
   }
-
   h1, h2, .display{
     font-family: 'Lalezar', 'Vazirmatn', sans-serif;
     font-weight: 400;
     letter-spacing: .5px;
   }
-
   a{ color: inherit; }
-
-  /* ---------- floating petals ---------- */
   #petals{ position: fixed; inset:0; pointer-events:none; z-index: 5; overflow:hidden; }
   .petal{
     position:absolute; top:-8%;
@@ -63,16 +56,8 @@
     .petal{ animation: none; display:none; }
     html{ scroll-behavior:auto; }
   }
-
   .wrap{ max-width: 980px; margin:0 auto; padding: 0 20px; position:relative; z-index:2; }
-
-  /* ---------- HERO / postcard header ---------- */
-  .hero{
-    padding: 56px 0 40px;
-    text-align:center;
-    position:relative;
-  }
-
+  .hero{ padding: 56px 0 40px; text-align:center; position:relative; }
   .eyebrow{
     display:inline-block;
     font-size: 14px;
@@ -84,21 +69,17 @@
     margin-bottom: 22px;
     letter-spacing: 1px;
   }
-
   .hero h1{
     font-size: clamp(48px, 10vw, 92px);
     color: var(--pink-deep);
     margin: 0 0 6px;
     text-shadow: 3px 3px 0 var(--gold-light);
   }
-
   .hero .sub{
     font-size: clamp(16px, 2.6vw, 22px);
     color: var(--plum-soft);
     margin: 0 0 40px;
   }
-
-  /* postcard photo strip */
   .postcard{
     position: relative;
     background: var(--cream);
@@ -111,7 +92,6 @@
     justify-content:center;
     align-items:flex-end;
   }
-
   .polaroid{
     background: #fff;
     padding: 10px 10px 26px;
@@ -127,7 +107,6 @@
   .polaroid.p2{ transform: rotate(3deg) translateY(-10px); }
   .polaroid.p3{ transform: rotate(9deg); }
   .polaroid:hover{ transform: rotate(0deg) translateY(-8px) scale(1.03); }
-
   .stamp{
     position:absolute;
     top: -18px;
@@ -142,10 +121,7 @@
     transform: rotate(-10deg);
     box-shadow: 0 6px 14px -6px rgba(90,43,65,.4);
   }
-
-  /* ---------- section shell ---------- */
   section{ padding: 64px 0; position: relative; }
-
   .section-title{
     text-align:center;
     font-size: clamp(30px, 5vw, 44px);
@@ -158,8 +134,6 @@
     font-size: 15px;
     margin: 0 0 42px;
   }
-
-  /* ---------- nicknames as stickers ---------- */
   .stickers{
     display:flex;
     flex-wrap:wrap;
@@ -193,8 +167,6 @@
     color: #fff;
     border-color: var(--pink-deep2);
   }
-
-  /* ---------- foods ---------- */
   .foods{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
@@ -211,11 +183,7 @@
     border: 1px solid rgba(217,82,122,.12);
     position:relative;
   }
-  .food-card .icon{
-    font-size: 46px;
-    display:block;
-    margin-bottom: 12px;
-  }
+  .food-card .icon{ font-size: 46px; display:block; margin-bottom: 12px; }
   .food-card h3{
     font-family:'Lalezar', sans-serif;
     font-weight:400;
@@ -223,18 +191,8 @@
     color: var(--pink-deep2);
     margin: 0 0 8px;
   }
-  .food-card p{
-    font-size: 14px;
-    color: var(--plum-soft);
-    line-height: 1.9;
-    margin:0;
-  }
-
-  /* ---------- lily divider ---------- */
-  .lily-divider{
-    text-align:center;
-    padding: 30px 0 10px;
-  }
+  .food-card p{ font-size: 14px; color: var(--plum-soft); line-height: 1.9; margin:0; }
+  .lily-divider{ text-align:center; padding: 30px 0 10px; }
   .lily-divider svg{ width: 120px; height: auto; margin-bottom: 14px; }
   .lily-divider p{
     font-family:'Lalezar', sans-serif;
@@ -249,8 +207,6 @@
     color: var(--plum-soft);
     margin-top: 6px;
   }
-
-  /* ---------- closing letter ---------- */
   .letter-wrap{
     max-width: 640px;
     margin: 0 auto;
@@ -275,21 +231,14 @@
     margin: 0 0 16px;
     text-align: center;
   }
-  .signature{
-    text-align:center;
-    margin-top: 26px;
-  }
-  .signature .from{
-    font-size: 15px;
-    color: var(--plum-soft);
-  }
+  .signature{ text-align:center; margin-top: 26px; }
+  .signature .from{ font-size: 15px; color: var(--plum-soft); }
   .signature .love{
     font-family:'Lalezar', sans-serif;
     font-size: 34px;
     color: var(--pink-deep);
     margin-top: 6px;
   }
-
   footer{
     text-align:center;
     padding: 30px 0 50px;
@@ -297,18 +246,13 @@
     color: var(--plum-soft);
     opacity:.8;
   }
-
   @media (max-width: 560px){
     .postcard{ padding: 22px 14px 28px; gap: 14px; }
     .polaroid{ width: 42%; }
     .polaroid img{ height: 140px; }
     .polaroid.p2{ transform: rotate(2deg) translateY(0); order:3; width: 60%; }
   }
-
-  :focus-visible{
-    outline: 3px solid var(--pink-deep2);
-    outline-offset: 3px;
-  }
+  :focus-visible{ outline: 3px solid var(--pink-deep2); outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -317,7 +261,6 @@
 
 <div class="wrap">
 
-  <!-- HERO -->
   <div class="hero">
     <span class="eyebrow">یه کارت‌پستال کوچولو، فقط برای تو 🌷</span>
     <h1>آیسان</h1>
@@ -325,13 +268,12 @@
 
     <div class="postcard">
       <div class="stamp">پست عاشقانه<br>بابایی</div>
-      <div class="polaroid p1"><img src="assets/photo1.jpeg" alt="آیسان روی تاب، با کلاه قرمز و لبخند بزرگ"></div>
-      <div class="polaroid p2"><img src="assets/photo2.jpeg" alt="آیسان کوچولو با لباس یاسی و پاپیون سفید"></div>
-      <div class="polaroid p3"><img src="assets/photo3.jpeg" alt="آیسان با دم‌اسبی و لباس صورتی، نشسته و خندان"></div>
+      <div class="polaroid p1"><img src="photo1.jpeg" alt="آیسان روی تاب، با کلاه قرمز و لبخند بزرگ"></div>
+      <div class="polaroid p2"><img src="photo2.jpeg" alt="آیسان کوچولو با لباس یاسی و پاپیون سفید"></div>
+      <div class="polaroid p3"><img src="photo3.jpeg" alt="آیسان با دم‌اسبی و لباس صورتی، نشسته و خندان"></div>
     </div>
   </div>
 
-  <!-- NICKNAMES -->
   <section id="nicknames">
     <h2 class="section-title">این‌همه اسم، فقط برای یه شیطونِ لوس</h2>
     <p class="section-caption">هر روز یه اسم جدید بهت میدم، چون یکی کافی نیست</p>
@@ -345,7 +287,6 @@
     </div>
   </section>
 
-  <!-- LILY DIVIDER -->
   <div class="lily-divider">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g>
@@ -361,7 +302,6 @@
     <span>هر بار که می‌بینمت، یاد بوی خوش لیلیوم می‌افتم</span>
   </div>
 
-  <!-- FOODS -->
   <section id="foods">
     <h2 class="section-title">خوراکی‌های دلِ آیسان</h2>
     <p class="section-caption">چیزهایی که فقط اسمشونو بیاری، چشمات برق می‌زنه</p>
@@ -379,7 +319,6 @@
     </div>
   </section>
 
-  <!-- CLOSING LETTER -->
   <section id="letter">
     <div class="letter-wrap">
       <p>هر بار که می‌خندی، دنیای من روشن‌تر می‌شه.</p>
@@ -397,7 +336,6 @@
 </div>
 
 <script>
-  // gentle floating petals/hearts background
   (function(){
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var container = document.getElementById('petals');
