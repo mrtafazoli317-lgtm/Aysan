@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آیسان جونم 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink-bg: #fdeef3;
+    --pink-bg2: #fff6f8;
+    --pink-mid: #f6c7da;
+    --pink-deep: #d9527a;
+    --pink-deep2: #b83a63;
+    --gold: #dda45e;
+    --gold-light: #f1cd93;
+    --plum: #5a2b41;
+    --plum-soft: #7a4359;
+    --cream: #fffaf8;
+    --stamp: #f0d9c8;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--pink-bg);
+    background-image:
+      radial-gradient(circle at 12% 8%, var(--pink-mid) 0, transparent 38%),
+      radial-gradient(circle at 90% 15%, var(--gold-light) 0, transparent 30%),
+      radial-gradient(circle at 85% 85%, var(--pink-mid) 0, transparent 35%);
+    color: var(--plum);
+    font-family: 'Vazirmatn', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  h1, h2, .display{
+    font-family: 'Lalezar', 'Vazirmatn', sans-serif;
+    font-weight: 400;
+    letter-spacing: .5px;
+  }
+
+  a{ color: inherit; }
+
+  /* ---------- floating petals ---------- */
+  #petals{ position: fixed; inset:0; pointer-events:none; z-index: 5; overflow:hidden; }
+  .petal{
+    position:absolute; top:-8%;
+    font-size: 18px;
+    opacity: .55;
+    animation: fall linear infinite;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.05));
+  }
+  @keyframes fall{
+    0%{ transform: translateY(0) translateX(0) rotate(0deg); }
+    100%{ transform: translateY(112vh) translateX(30px) rotate(340deg); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .petal{ animation: none; display:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  .wrap{ max-width: 980px; margin:0 auto; padding: 0 20px; position:relative; z-index:2; }
+
+  /* ---------- HERO / postcard header ---------- */
+  .hero{
+    padding: 56px 0 40px;
+    text-align:center;
+    position:relative;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-size: 14px;
+    background: var(--cream);
+    color: var(--pink-deep2);
+    border: 1.5px dashed var(--pink-deep);
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+  }
+
+  .hero h1{
+    font-size: clamp(48px, 10vw, 92px);
+    color: var(--pink-deep);
+    margin: 0 0 6px;
+    text-shadow: 3px 3px 0 var(--gold-light);
+  }
+
+  .hero .sub{
+    font-size: clamp(16px, 2.6vw, 22px);
+    color: var(--plum-soft);
+    margin: 0 0 40px;
+  }
+
+  /* postcard photo strip */
+  .postcard{
+    position: relative;
+    background: var(--cream);
+    border-radius: 18px;
+    padding: 28px 22px 34px;
+    box-shadow: 0 18px 40px -18px rgba(90,43,65,.35), 0 0 0 1px rgba(217,82,122,.08);
+    display:flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:flex-end;
+  }
+
+  .polaroid{
+    background: #fff;
+    padding: 10px 10px 26px;
+    box-shadow: 0 10px 24px -10px rgba(90,43,65,.4);
+    width: 210px;
+    transition: transform .35s ease;
+  }
+  .polaroid img{
+    width:100%; height: 230px; object-fit: cover; display:block;
+    border-radius: 2px;
+  }
+  .polaroid.p1{ transform: rotate(-7deg); }
+  .polaroid.p2{ transform: rotate(3deg) translateY(-10px); }
+  .polaroid.p3{ transform: rotate(9deg); }
+  .polaroid:hover{ transform: rotate(0deg) translateY(-8px) scale(1.03); }
+
+  .stamp{
+    position:absolute;
+    top: -18px;
+    left: -14px;
+    background: var(--stamp);
+    border: 3px dotted var(--pink-deep2);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-family: 'Lalezar', sans-serif;
+    font-size: 13px;
+    color: var(--pink-deep2);
+    transform: rotate(-10deg);
+    box-shadow: 0 6px 14px -6px rgba(90,43,65,.4);
+  }
+
+  /* ---------- section shell ---------- */
+  section{ padding: 64px 0; position: relative; }
+
+  .section-title{
+    text-align:center;
+    font-size: clamp(30px, 5vw, 44px);
+    color: var(--pink-deep2);
+    margin: 0 0 10px;
+  }
+  .section-caption{
+    text-align:center;
+    color: var(--plum-soft);
+    font-size: 15px;
+    margin: 0 0 42px;
+  }
+
+  /* ---------- nicknames as stickers ---------- */
+  .stickers{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap: 16px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .sticker{
+    background: linear-gradient(155deg, #fff, var(--pink-bg2));
+    border: 2px solid var(--pink-mid);
+    padding: 12px 22px;
+    border-radius: 40px;
+    font-size: 17px;
+    color: var(--pink-deep2);
+    box-shadow: 0 8px 18px -10px rgba(217,82,122,.5);
+    transform: rotate(var(--r,0deg));
+    transition: transform .25s ease;
+  }
+  .sticker:hover{ transform: rotate(0deg) scale(1.08); }
+  .sticker:nth-child(1){ --r:-4deg; }
+  .sticker:nth-child(2){ --r:3deg; }
+  .sticker:nth-child(3){ --r:-2deg; }
+  .sticker:nth-child(4){ --r:5deg; }
+  .sticker:nth-child(5){ --r:-3deg; }
+  .sticker:nth-child(6){ --r:2deg; }
+  .sticker.big{
+    font-family: 'Lalezar', sans-serif;
+    font-size: 24px;
+    background: var(--pink-deep);
+    color: #fff;
+    border-color: var(--pink-deep2);
+  }
+
+  /* ---------- foods ---------- */
+  .foods{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 26px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .food-card{
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 30px 22px;
+    text-align:center;
+    box-shadow: 0 14px 30px -18px rgba(90,43,65,.35);
+    border: 1px solid rgba(217,82,122,.12);
+    position:relative;
+  }
+  .food-card .icon{
+    font-size: 46px;
+    display:block;
+    margin-bottom: 12px;
+  }
+  .food-card h3{
+    font-family:'Lalezar', sans-serif;
+    font-weight:400;
+    font-size: 22px;
+    color: var(--pink-deep2);
+    margin: 0 0 8px;
+  }
+  .food-card p{
+    font-size: 14px;
+    color: var(--plum-soft);
+    line-height: 1.9;
+    margin:0;
+  }
+
+  /* ---------- lily divider ---------- */
+  .lily-divider{
+    text-align:center;
+    padding: 30px 0 10px;
+  }
+  .lily-divider svg{ width: 120px; height: auto; margin-bottom: 14px; }
+  .lily-divider p{
+    font-family:'Lalezar', sans-serif;
+    font-size: 22px;
+    color: var(--gold);
+    margin:0;
+  }
+  .lily-divider span{
+    display:block;
+    font-family:'Vazirmatn', sans-serif;
+    font-size: 14px;
+    color: var(--plum-soft);
+    margin-top: 6px;
+  }
+
+  /* ---------- closing letter ---------- */
+  .letter-wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--cream);
+    border-radius: 18px;
+    padding: 42px 34px;
+    position: relative;
+    box-shadow: 0 20px 44px -20px rgba(90,43,65,.4);
+    border: 1px solid rgba(217,82,122,.12);
+  }
+  .letter-wrap::before{
+    content:"";
+    position:absolute; inset: 10px;
+    border: 1.5px dashed var(--pink-mid);
+    border-radius: 12px;
+    pointer-events:none;
+  }
+  .letter-wrap p{
+    font-size: 18px;
+    line-height: 2.3;
+    color: var(--plum);
+    margin: 0 0 16px;
+    text-align: center;
+  }
+  .signature{
+    text-align:center;
+    margin-top: 26px;
+  }
+  .signature .from{
+    font-size: 15px;
+    color: var(--plum-soft);
+  }
+  .signature .love{
+    font-family:'Lalezar', sans-serif;
+    font-size: 34px;
+    color: var(--pink-deep);
+    margin-top: 6px;
+  }
+
+  footer{
+    text-align:center;
+    padding: 30px 0 50px;
+    font-size: 13px;
+    color: var(--plum-soft);
+    opacity:.8;
+  }
+
+  @media (max-width: 560px){
+    .postcard{ padding: 22px 14px 28px; gap: 14px; }
+    .polaroid{ width: 42%; }
+    .polaroid img{ height: 140px; }
+    .polaroid.p2{ transform: rotate(2deg) translateY(0); order:3; width: 60%; }
+  }
+
+  :focus-visible{
+    outline: 3px solid var(--pink-deep2);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div id="petals"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="eyebrow">یه کارت‌پستال کوچولو، فقط برای تو 🌷</span>
+    <h1>آیسان</h1>
+    <p class="sub">جوجومینیِ بابایی 🐣💕</p>
+
+    <div class="postcard">
+      <div class="stamp">پست عاشقانه<br>بابایی</div>
+      <div class="polaroid p1"><img src="assets/photo1.jpeg" alt="آیسان روی تاب، با کلاه قرمز و لبخند بزرگ"></div>
+      <div class="polaroid p2"><img src="assets/photo2.jpeg" alt="آیسان کوچولو با لباس یاسی و پاپیون سفید"></div>
+      <div class="polaroid p3"><img src="assets/photo3.jpeg" alt="آیسان با دم‌اسبی و لباس صورتی، نشسته و خندان"></div>
+    </div>
+  </div>
+
+  <!-- NICKNAMES -->
+  <section id="nicknames">
+    <h2 class="section-title">این‌همه اسم، فقط برای یه شیطونِ لوس</h2>
+    <p class="section-caption">هر روز یه اسم جدید بهت میدم، چون یکی کافی نیست</p>
+    <div class="stickers">
+      <span class="sticker big">جوجومینی 🐥</span>
+      <span class="sticker">عروسک بابایی 🎀</span>
+      <span class="sticker">شیطونِ ملوس 😝</span>
+      <span class="sticker">لوس‌خانمِ کوچولو 💅</span>
+      <span class="sticker">شکرپنیر 🍬</span>
+      <span class="sticker">نفسِ بابایی 🤍</span>
+    </div>
+  </section>
+
+  <!-- LILY DIVIDER -->
+  <div class="lily-divider">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M50 55 C40 30 30 15 50 5 C70 15 60 30 50 55 Z" fill="#f6c7da" stroke="#d9527a" stroke-width="1.4"/>
+        <path d="M50 55 C25 45 10 40 5 55 C15 68 32 62 50 55 Z" fill="#f8d6e3" stroke="#d9527a" stroke-width="1.4"/>
+        <path d="M50 55 C75 45 90 40 95 55 C85 68 68 62 50 55 Z" fill="#f8d6e3" stroke="#d9527a" stroke-width="1.4"/>
+        <path d="M50 55 C40 75 35 90 50 96 C65 90 60 75 50 55 Z" fill="#f6c7da" stroke="#d9527a" stroke-width="1.4"/>
+        <circle cx="50" cy="55" r="6" fill="#dda45e"/>
+        <line x1="50" y1="60" x2="50" y2="100" stroke="#8fae6d" stroke-width="2"/>
+      </g>
+    </svg>
+    <p>گل لیلیوم</p>
+    <span>هر بار که می‌بینمت، یاد بوی خوش لیلیوم می‌افتم</span>
+  </div>
+
+  <!-- FOODS -->
+  <section id="foods">
+    <h2 class="section-title">خوراکی‌های دلِ آیسان</h2>
+    <p class="section-caption">چیزهایی که فقط اسمشونو بیاری، چشمات برق می‌زنه</p>
+    <div class="foods">
+      <div class="food-card">
+        <span class="icon">🍫</span>
+        <h3>کیک شکلاتی خیس</h3>
+        <p>نرم، خیس و شکلاتی؛ دقیقاً مثل بغل‌کردن‌های تو</p>
+      </div>
+      <div class="food-card">
+        <span class="icon">🥮</span>
+        <h3>قطاب یزدی</h3>
+        <p>یه گاز از قطاب، بعد یه لبخند بزرگ‌تر از خودِ قطاب</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING LETTER -->
+  <section id="letter">
+    <div class="letter-wrap">
+      <p>هر بار که می‌خندی، دنیای من روشن‌تر می‌شه.</p>
+      <p>هزار بار قربونِ اون چشم‌های شیطونت برم، جوجومینیِ من.</p>
+      <p>هر روز که بزرگ‌تر می‌شی، بیشتر عاشقت می‌شم.</p>
+      <div class="signature">
+        <div class="from">از طرف بابایی</div>
+        <div class="love">دوستت دارم تا ابد 💛</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>ساخته‌شده با عشق، برای همیشه 🌸</footer>
+
+</div>
+
+<script>
+  // gentle floating petals/hearts background
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var container = document.getElementById('petals');
+    var glyphs = ['🌸','💗','🌷','✨'];
+    var count = window.innerWidth < 560 ? 10 : 18;
+    for (var i=0; i<count; i++){
+      var el = document.createElement('span');
+      el.className = 'petal';
+      el.textContent = glyphs[Math.floor(Math.random()*glyphs.length)];
+      el.style.left = (Math.random()*100) + 'vw';
+      el.style.fontSize = (14 + Math.random()*14) + 'px';
+      var duration = 10 + Math.random()*14;
+      el.style.animationDuration = duration + 's';
+      el.style.animationDelay = (Math.random()*duration) + 's';
+      container.appendChild(el);
+    }
+  })();
+</script>
+
+</body>
+</html>
